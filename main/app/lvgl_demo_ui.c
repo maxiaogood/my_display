@@ -77,7 +77,6 @@ lv_obj_t * temp_label;
 lv_obj_t * humi_label;
 lv_meter_indicator_t * temp_indic;
 lv_meter_indicator_t * humi_indic;
-int temp_value, humi_value; // 室内实时温湿度值
 
 // 定时更新温湿度值
 void thv_update_cb(lv_timer_t * timer)

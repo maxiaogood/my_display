@@ -1,5 +1,5 @@
 idf_component_register(
-    SRCS "app/app_main.c" "app/lvgl_demo_ui.c"
+    SRCS "app/app_main.c" "app/lvgl_demo_ui.c" "app/th_task.c"
     SRCS "bsp/bsp_iic.c"
     SRCS "sensor/gxhtc3.c" "sensor/qmc5883l.c" "sensor/qmi8658c.c"
     SRCS "audio.c" 
