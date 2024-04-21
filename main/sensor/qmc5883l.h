@@ -1,9 +1,19 @@
-#pragma once
+/**
+ * @file qmc5883l.h
+ * @author maxiao (maxiaogood@foxmail.com)
+ * @brief 地磁传感器驱动
+ * @version 0.1
+ * @date 2024-04-21
+ *
+ * @copyright Copyright (c) 2024, maxiao. All rights reserved.
+ *
+ */
+#ifndef __QMC5883L_H
+#define __QMC5883L_H
 
 #include <stdint.h>
 
-#define  QMC5883L_SENSOR_ADDR    0x0D
-
+#define QMC5883L_SENSOR_ADDR 0x0D
 
 enum qmc5883l_reg
 {
@@ -22,14 +32,16 @@ enum qmc5883l_reg
     QMC5883L_CHIPID = 13
 };
 
-typedef struct{
+typedef struct
+{
     int16_t mag_x;
-	int16_t mag_y;
-	int16_t mag_z;
-    float   azimuth;
-}t_sQMC5883L;
-
+    int16_t mag_y;
+    int16_t mag_z;
+    float azimuth;
+} t_sQMC5883L;
 
 void qmc5883l_init(void);
 void qmc5883l_read_xyz(t_sQMC5883L *p);
 void qmc5883l_fetch_azimuth(t_sQMC5883L *p);
+
+#endif // __QMC5883L_H

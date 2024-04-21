@@ -20,6 +20,7 @@
     "files.associations": {
         "lvgl.h": "c",
         "bsp_iic.h": "c",
-        "lv_demos.h": "c"
+        "lv_demos.h": "c",
+        "bsp_spi.h": "c"
     },
 }

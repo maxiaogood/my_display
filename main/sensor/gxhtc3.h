@@ -4,9 +4,9 @@
  * @brief gxhtc3温湿度传感器驱动
  * @version 0.1
  * @date 2024-04-21
- * 
+ *
  * @copyright Copyright (c) 2024, maxiao. All rights reserved.
- * 
+ *
  */
 #ifndef __GXHTC3_H
 #define __GXHTC3_H

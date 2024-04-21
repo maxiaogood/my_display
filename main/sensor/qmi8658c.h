@@ -1,9 +1,19 @@
-#pragma once
+/**
+ * @file qmi8658c.h
+ * @author maxiao (maxiaogood@foxmail.com)
+ * @brief 陀螺仪传感器驱动
+ * @version 0.1
+ * @date 2024-04-21
+ *
+ * @copyright Copyright (c) 2024, maxiao. All rights reserved.
+ *
+ */
+#ifndef __QMI8658C_H
+#define __QMI8658C_H
 
 #include <stdint.h>
 
-#define  QMI8658C_SENSOR_ADDR       0x6A
-
+#define QMI8658C_SENSOR_ADDR 0x6A
 
 enum qmi8658c_reg
 {
@@ -77,17 +87,20 @@ enum qmi8658c_reg
     QMI8658C_RESET = 96
 };
 
-typedef struct{
+typedef struct
+{
     int16_t acc_x;
-	int16_t acc_y;
-	int16_t acc_z;
-	int16_t gyr_x;
-	int16_t gyr_y;
-	int16_t gyr_z;
-	float AngleX;
-	float AngleY;
-	float AngleZ;
-}t_sQMI8658C;
+    int16_t acc_y;
+    int16_t acc_z;
+    int16_t gyr_x;
+    int16_t gyr_y;
+    int16_t gyr_z;
+    float AngleX;
+    float AngleY;
+    float AngleZ;
+} t_sQMI8658C;
 
 void qmi8658c_init(void);
 void qmi8658c_fetch_angleFromAcc(t_sQMI8658C *p);
+
+#endif // __QMI8658C_H
