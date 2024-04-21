@@ -12,7 +12,7 @@
 #include "driver/ledc.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
-#include "main.h"
+#include "app_main.h"
 #include "gxhtc3.h"
 
 LV_FONT_DECLARE(font_alipuhui20);

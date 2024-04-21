@@ -48,7 +48,7 @@
 #include <math.h>
 
 #include "audio.h"
-#include "main.h"
+#include "app_main.h"
 
 
 // Using SPI2 in the example

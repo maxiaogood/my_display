@@ -8,7 +8,7 @@
 #include "esp_efuse_table.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/event_groups.h"
-#include "main.h"
+#include "app_main.h"
 
 static const char *TAG = "i2s_es8311";
 static const char err_reason[][30] = {"input param is invalid",
