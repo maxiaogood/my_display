@@ -1,0 +1,38 @@
+dependencies:
+  espressif/es8311:
+    component_hash: eacbe7cb7f6993eb0f439121a56663cdfbf95925e7ddf5d2ed5aa640bed476fd
+    source:
+      storage_url: file:///C:/Espressif/registry
+      type: service
+    version: 1.0.0
+  espressif/esp_lcd_touch:
+    component_hash: d4d8f2dc33205797169a97a02e0d89a8982f59fe0509129b54422052b8522f59
+    source:
+      storage_url: file:///C:/Espressif/registry
+      type: service
+    version: 1.1.1
+  espressif/zlib:
+    component_hash: 999ec50086ac1c82b8321d8f540dc9fd10f5622948b935558aa16b4b66e95d9d
+    source:
+      type: service
+    version: 1.3.0
+  espressif__esp_lcd_touch_ft5x06:
+    component_hash: null
+    source:
+      path: D:\001_code\001_esp32c3\handheld\components\espressif__esp_lcd_touch_ft5x06
+      type: local
+    version: 1.0.6
+  idf:
+    component_hash: null
+    source:
+      type: idf
+    version: 5.1.3
+  lvgl/lvgl:
+    component_hash: 948bff879a345149b83065535bbc4a026ce9f47498a22881e432a264b9098015
+    source:
+      storage_url: file:///C:/Espressif/registry
+      type: service
+    version: 8.3.11
+manifest_hash: c5eee0624092731c1d922a13050e8a3353cae7c5cb945a427f7378e2447f2316
+target: esp32c3
+version: 1.0.0
