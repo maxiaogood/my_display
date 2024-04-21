@@ -50,7 +50,6 @@
 #include "audio.h"
 #include "main.h"
 
-static const char *TAG = "example";
 
 // Using SPI2 in the example
 #define LCD_HOST  SPI2_HOST
@@ -179,7 +178,7 @@ void get_th_task(void *args)
     {
         ret = gxhtc3_get_tah(); // 获取一次温湿度
         if (ret!=ESP_OK) {
-            ESP_LOGE(TAG,"GXHTC3 READ TAH ERROR."); 
+            ESP_LOGE(__FILE__,"GXHTC3 READ TAH ERROR."); 
         }
         else{ // 如果成功获取数据
             temp_sum = temp_sum + temp; // 温度累计和
@@ -197,7 +196,7 @@ void get_th_task(void *args)
             time_cnt = 0; date_cnt = 0; temp_sum = 0; humi_sum = 0;
             // 标记温湿度有新数值
             //th_update_flag = 1; 
-            ESP_LOGI(TAG, "TEMP:%d HUMI:%d", temp_value, humi_value);
+            ESP_LOGI(__FILE__, "TEMP:%d HUMI:%d", temp_value, humi_value);
         }
         if (icon_flag == 0)
         {
@@ -227,15 +226,16 @@ static void main_page_task(void *pvParameters)
 void app_main(void)
 {
     //初始化I2C
+    ESP_LOGI(__FILE__, "app_main start");
     ESP_ERROR_CHECK(i2c_master_init());
-    ESP_LOGI(TAG, "I2C initialized successfully");
+    ESP_LOGI(__FILE__, "I2C initialized successfully");
 
     // 检查温湿度芯片
     esp_err_t ret = gxhtc3_read_id();
     while(ret != ESP_OK)
     {
          ret = gxhtc3_read_id();
-         ESP_LOGI(TAG,"GXHTC3 READ ID");
+         ESP_LOGI(__FILE__,"GXHTC3 READ ID");
          vTaskDelay(1000 / portTICK_PERIOD_MS);
     }
     gxhtc3_get_tah();
@@ -246,7 +246,7 @@ void app_main(void)
     static lv_disp_draw_buf_t disp_buf; // contains internal graphic buffer(s) called draw buffer(s)
     static lv_disp_drv_t disp_drv;      // contains callback functions
 
-    ESP_LOGI(TAG, "Initialize SPI bus");
+    ESP_LOGI(__FILE__, "Initialize SPI bus");
     spi_bus_config_t buscfg = {
         .sclk_io_num = EXAMPLE_PIN_NUM_SCLK,
         .mosi_io_num = EXAMPLE_PIN_NUM_MOSI,
@@ -257,7 +257,7 @@ void app_main(void)
     };
     ESP_ERROR_CHECK(spi_bus_initialize(LCD_HOST, &buscfg, SPI_DMA_CH_AUTO));
 
-    ESP_LOGI(TAG, "Install panel IO");
+    ESP_LOGI(__FILE__, "Install panel IO");
     esp_lcd_panel_io_handle_t io_handle = NULL;
     esp_lcd_panel_io_spi_config_t io_config = {
         .dc_gpio_num = EXAMPLE_PIN_NUM_LCD_DC,
@@ -280,7 +280,7 @@ void app_main(void)
         .bits_per_pixel = 16,
     };
 
-    ESP_LOGI(TAG, "Install ST7789 panel driver");
+    ESP_LOGI(__FILE__, "Install ST7789 panel driver");
     ESP_ERROR_CHECK(esp_lcd_new_panel_st7789(io_handle, &panel_config, &panel_handle));
 
     ESP_ERROR_CHECK(esp_lcd_panel_reset(panel_handle));
@@ -305,11 +305,11 @@ void app_main(void)
         },
     };
 
-    ESP_LOGI(TAG, "Initialize touch controller FT6336");
+    ESP_LOGI(__FILE__, "Initialize touch controller FT6336");
     ESP_ERROR_CHECK(esp_lcd_touch_new_i2c_ft5x06(tp_io_handle, &tp_cfg, &tp));
 
     // 初始化LVGL
-    ESP_LOGI(TAG, "Initialize LVGL library");
+    ESP_LOGI(__FILE__, "Initialize LVGL library");
     lv_init();
     
     lv_color_t *buf1 = heap_caps_malloc(EXAMPLE_LCD_H_RES * 20 * sizeof(lv_color_t), MALLOC_CAP_DMA);
@@ -319,7 +319,7 @@ void app_main(void)
     
     lv_disp_draw_buf_init(&disp_buf, buf1, buf2, EXAMPLE_LCD_H_RES * 20);
 
-    ESP_LOGI(TAG, "Register display driver to LVGL");
+    ESP_LOGI(__FILE__, "Register display driver to LVGL");
     lv_disp_drv_init(&disp_drv);
     disp_drv.hor_res = EXAMPLE_LCD_H_RES;
     disp_drv.ver_res = EXAMPLE_LCD_V_RES;
@@ -328,7 +328,7 @@ void app_main(void)
     disp_drv.user_data = panel_handle;
     lv_disp_t *disp = lv_disp_drv_register(&disp_drv);
 
-    ESP_LOGI(TAG, "Install LVGL tick timer");
+    ESP_LOGI(__FILE__, "Install LVGL tick timer");
     
     const esp_timer_create_args_t lvgl_tick_timer_args = {
         .callback = &example_increase_lvgl_tick,
