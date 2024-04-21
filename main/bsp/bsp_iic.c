@@ -12,7 +12,6 @@
 #define __BSP_IIC_C
 
 #include "bsp_iic.h"
-#include "driver/i2c.h"
 
 /**
  * @brief i2c master initialization

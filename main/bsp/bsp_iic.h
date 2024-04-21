@@ -11,6 +11,7 @@
 #ifndef __BSP_IIC_H
 #define __BSP_IIC_H
 
+#include "driver/i2c.h"
 #include "esp_err.h"
 
 #define I2C_MASTER_SCL_IO           GPIO_NUM_1      /*!< GPIO number used for I2C master clock */

@@ -1,6 +1,5 @@
-#include "bsp/bsp_iic.h"
+#include "bsp_iic.h"
 #include "qmc5883l.h"
-#include "driver/i2c.h"
 #include "esp_log.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"

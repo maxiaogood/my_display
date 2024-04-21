@@ -1,8 +1,9 @@
 idf_component_register(
     SRCS "main.c"
     SRCS "bsp/bsp_iic.c"
-    SRCS "qmc5883l.c" "qmi8658c.c" "gxhtc3.c" "lvgl_demo_ui.c" "audio.c" 
+    SRCS "sensor/gxhtc3.c"
+    SRCS "qmc5883l.c" "qmi8658c.c" "lvgl_demo_ui.c" "audio.c" 
     SRCS "assets/image_lckfb_logo.c" "assets/image_th_icon.c" "assets/image_spr_icon.c" "assets/image_mic_icon.c" 
     SRCS "assets/image_att_icon.c" "assets/image_comp_icon.c" "assets/image_set_icon.c" "assets/font_alipuhui20" "assets/font_myawesome.c"
-    INCLUDE_DIRS "."
+    INCLUDE_DIRS "." "assets" "bsp" "sensor"
     EMBED_FILES "sword.pcm")

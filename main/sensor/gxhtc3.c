@@ -1,6 +1,18 @@
-#include "bsp/bsp_iic.h"
+/**
+ * @file gxhtc3.c
+ * @author maxiao (maxiaogood@foxmail.com)
+ * @brief gxhtc3温湿度传感器驱动
+ * @version 0.1
+ * @date 2024-04-21
+ * 
+ * @copyright Copyright (c) 2024, maxiao. All rights reserved.
+ * 
+ */
+#ifndef __GXHTC3_C
+#define __GXHTC3_C
+
+#include "bsp_iic.h"
 #include "gxhtc3.h"
-#include "driver/i2c.h"
 #include <math.h>
 
 uint8_t tah_data[6];
@@ -162,5 +174,5 @@ esp_err_t gxhtc3_get_tah(void)
     return ret;
 }
 
-
+#endif // __GXHTC3_C
 

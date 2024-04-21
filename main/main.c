@@ -3,7 +3,8 @@
  *
  * SPDX-License-Identifier: CC0-1.0
  */
-#include "bsp/bsp_iic.h"
+#include "bsp_iic.h"
+#include "gxhtc3.h"
 
 #include <stdio.h>
 #include "freertos/FreeRTOS.h"
@@ -21,7 +22,6 @@
 #include "lv_demos.h"
 #include "esp_lcd_touch_ft5x06.h"
 #include "driver/ledc.h"
-#include "gxhtc3.h"
 
 #include <string.h>
 #include <sys/param.h>
