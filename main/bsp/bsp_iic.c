@@ -1,4 +1,17 @@
-#include "myi2c.h"
+/**
+ * @file bsp_iic.c
+ * @author maxiao (maxiaogood@foxmail.com)
+ * @brief IIC驱动
+ * @version 0.1
+ * @date 2024-04-21
+ * 
+ * @copyright Copyright (c) 2024, maxiao. All rights reserved.
+ * 
+ */
+#ifndef __BSP_IIC_C
+#define __BSP_IIC_C
+
+#include "bsp_iic.h"
 #include "driver/i2c.h"
 
 /**
@@ -21,3 +34,4 @@ esp_err_t i2c_master_init(void)
 
     return i2c_driver_install(i2c_master_port, conf.mode, I2C_MASTER_RX_BUF_DISABLE, I2C_MASTER_TX_BUF_DISABLE, 0);
 }
+#endif // __BSP_IIC_C

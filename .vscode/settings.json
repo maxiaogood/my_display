@@ -4,5 +4,22 @@
     "idf.openOcdConfigs": [
         "board/esp32c3-bridge.cfg"
     ],
-    "idf.flashType": "UART"
+    "idf.flashType": "UART",
+    "code-runner.languageIdToFileExtensionMap": {
+        "bat": ".bat",
+        "powershell": ".ps1",
+        "typescript": ".ts"
+    },
+    // 马潇添加的配置
+    // Doxygen documentation generator set start
+    "doxdocgen.generic.authorEmail": "maxiaogood@foxmail.com",
+    "doxdocgen.generic.authorName": "maxiao",
+    "doxdocgen.file.copyrightTag": [
+        "@copyright Copyright (c) {year}, maxiao. All rights reserved."
+    ],
+    "files.associations": {
+        "lvgl.h": "c",
+        "bsp_iic.h": "c",
+        "lv_demos.h": "c"
+    },
 }

@@ -1,5 +1,5 @@
+#include "bsp/bsp_iic.h"
 #include "gxhtc3.h"
-#include "myi2c.h"
 #include "driver/i2c.h"
 #include <math.h>
 

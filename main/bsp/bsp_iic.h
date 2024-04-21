@@ -1,4 +1,15 @@
-#pragma once
+/**
+ * @file bsp_iic.h
+ * @author maxiao (maxiaogood@foxmail.com)
+ * @brief IIC驱动
+ * @version 0.1
+ * @date 2024-04-21
+ * 
+ * @copyright Copyright (c) 2024, maxiao. All rights reserved.
+ * 
+ */
+#ifndef __BSP_IIC_H
+#define __BSP_IIC_H
 
 #include "esp_err.h"
 
@@ -11,3 +22,4 @@
 #define I2C_MASTER_TIMEOUT_MS       1000
 
 extern esp_err_t i2c_master_init(void);
+#endif // __BSP_IIC_H
